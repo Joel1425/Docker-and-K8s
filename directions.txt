@@ -1,0 +1,22 @@
+docker build -t joel1425/calculator .
+
+docker run -d --name=CalculatorApp -p 80:80 joel1425/calculator
+
+docker login 
+
+docker push joel1425/calculator:latest
+
+# docker image done. Now write deployment file
+# first write on terminal
+
+minikube start
+
+write deployment file
+
+kubectl apply -f deployment.yaml
+
+kubectl apply -f service.yaml
+
+kubectl get svc
+
+minikube service joelcalculatorapp-service
